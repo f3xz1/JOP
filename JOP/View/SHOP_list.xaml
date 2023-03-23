@@ -19,8 +19,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="Categiries_List" Background="Aqua"/>
+            <ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2"/>
             <!--ItemsSource="{Binding Source=}"-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
         </Grid>
     </Grid>
 </Window>

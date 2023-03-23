@@ -55,15 +55,18 @@ namespace JOP.ViewModel
                 new(
                     () =>
                     {
-                        RegWindow reg = new();
-                        reg.ShowDialog();
-                        user = reg.user;
-                        if (user != null)
-                        {
-                            var res = user.create_user_async();
-                            this.Login = user.login;
-                            this.Password = user.password;
-                        }
+                        //RegWindow reg = new();
+                        //reg.ShowDialog();
+                        //user = reg.user;
+                        //if (user != null)
+                        //{
+                        //    var res = user.create_user_async();
+                        //    this.Login = user.login;
+                        //    this.Password = user.password;
+                        //}
+                        CartWindow cartWindow = new();
+                        //cartWindow.MyList.Items.Add("qwe","123");
+                        cartWindow.Show();
                     }
                     );
         }

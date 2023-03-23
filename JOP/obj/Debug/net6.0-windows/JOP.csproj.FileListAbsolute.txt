@@ -71,3 +71,5 @@ C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\Product_window.
 C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\SHOP_list.g.cs
 C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\Product_window.baml
 C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\SHOP_list.baml
+C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\CartWindow.g.cs
+C:\Users\Dato\source\repos\JOP\JOP\obj\Debug\net6.0-windows\View\CartWindow.baml

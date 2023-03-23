@@ -19,12 +19,20 @@
         </Grid.RowDefinitions>
         <Image Grid.RowSpan="2"/>
         <Grid Grid.Row="0" Grid.Column="1">
+            <!--???-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="Product_Name_textblock" Grid.Column="0" Text="Name: " FontSize="15" Margin="5 35"/>
-            <TextBox x:Name="Product_Name_textbox" Grid.Column="1" Margin="5 35" IsEnabled="False"/>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Product_Name_textblock" Grid.Column="0" Grid.Row="0"  Text="Name: " FontSize="15" Margin="10"/>
+            <TextBox x:Name="Product_Name_textbox" Grid.Row="0" Grid.Column="1" Margin="5 15" IsEnabled="False"/>
+            <TextBlock Grid.Column="0" Grid.Row="1"  Text="Category: " FontSize="10" Margin="5 15"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5 15" IsEnabled="False"/>
+            
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>

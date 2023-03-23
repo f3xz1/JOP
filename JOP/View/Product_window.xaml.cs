@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JOP.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace JOP.View
         public Product_window()
         {
             InitializeComponent();
+            DataContext = new ProductWindowViewModel();
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Dato\source\repos\JOP\JOP\App.xaml
-41489990956
+51661927139
 
-19-890271731
+231075808368
 2231396110509
-View\MainWindow.xaml;View\Product_window.xaml;View\RegWindow.xaml;View\SHOP_list.xaml;
+View\CartWindow.xaml;View\MainWindow.xaml;View\Product_window.xaml;View\RegWindow.xaml;View\SHOP_list.xaml;
 
 True
 

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOP", "JOP\JOP.csproj", "{77FEAAAF-BE9C-4937-AAEB-DD8DEAF109F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JOP", "JOP\JOP.csproj", "{77FEAAAF-BE9C-4937-AAEB-DD8DEAF109F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHOP_admin", "SHOP_admin\SHOP_admin.csproj", "{4D2601DB-E61F-459E-B8AA-E2D9F4B16B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{77FEAAAF-BE9C-4937-AAEB-DD8DEAF109F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77FEAAAF-BE9C-4937-AAEB-DD8DEAF109F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77FEAAAF-BE9C-4937-AAEB-DD8DEAF109F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2601DB-E61F-459E-B8AA-E2D9F4B16B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2601DB-E61F-459E-B8AA-E2D9F4B16B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2601DB-E61F-459E-B8AA-E2D9F4B16B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2601DB-E61F-459E-B8AA-E2D9F4B16B2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,10 +9,14 @@ namespace JOP.ViewModel
 {
     class SHOP_list_ViewModel
     {
+
+        public bool EditProductsMod { get; set; } = false;
         public List<Category> Categories { get; set; }
         public List<Product> Products { get; set; }
 
         public Category SelectedCategory { get; set; }
+            
+        public User User { get; set; }
 
         public SHOP_list_ViewModel()
         {
@@ -21,12 +25,10 @@ namespace JOP.ViewModel
                 //Categories = dB.Category;
             }
         }
-        public RelayCommand SelectedcategoryCommand
+        public RelayCommand SelectedCategoryCommand
         {
-
             get =>
                 new(
-
                     async () =>
                     {
                         using (DBContext dB = new())
@@ -37,5 +39,18 @@ namespace JOP.ViewModel
                     );
         }
 
+        public RelayCommand SelectedProductCommand
+        {
+            get =>
+                new(
+                    async () =>
+                    {
+                        using (DBContext dB = new())
+                        {
+
+                        }
+                    }
+                    );
+        }
     }
 }
