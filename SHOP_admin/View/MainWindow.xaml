@@ -10,7 +10,7 @@
         <StackPanel Orientation="Vertical">
             <Button Height="60" Margin="10" Content="Edit Products" />
             <Button Height="60" Margin="10" Content="Add Product" Command="{Binding AddProductCommand}"/>
-            <Button Height="60" Margin="10" Contetn="Add Admin"/>
+            <Button Height="60" Margin="10" Contetn="Add Admin" />
         </StackPanel>
     </Grid>
 </Window>
