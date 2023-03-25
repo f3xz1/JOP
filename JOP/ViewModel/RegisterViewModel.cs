@@ -8,24 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
+using JOP.Services;
+using System.Security;
+using System.ComponentModel;
 
 namespace JOP.ViewModel
 {
-    class RegisterViewModel
+    public class RegisterViewModel
     {
-
+        
+        public UserService userService{ get; set; }
         public string Login { get; set; }
         public string Password_1 { get; set; }
-        public string Password_2 { get; set; }
+        public string Password_2{get;set;
+        }
         public string Name { get; set; }
         public string Surname { get; set; }
-
-        public User User { get; set; }
+        public string Email { get; set; }
 
         public Brush RegButtonColor { get; set; }
         public Brush CancelButtonColor { get; set; }
-
-
+        public RegisterViewModel(UserService userService)
+        {
+            this.userService = userService;
+            RegButtonColor = Brushes.White;
+            CancelButtonColor = Brushes.White;
+        }
         public RelayCommand RegUserCommand
         {
 
@@ -34,17 +42,30 @@ namespace JOP.ViewModel
 
                     () =>
                     {
+                        //using (ShopContext db = new())
+                        //{
+                        //    if (db.Users.Any((x => x.Login == Login)))
+                        //    {
+                        //        RegButtonColor = Brushes.Red;
+                        //        CancelButtonColor = Brushes.Red; // fix
+                        //        return;
+                        //    }
+                        //}
                         if (this.Password_1 != Password_2)
                         {
                             RegButtonColor = Brushes.Red;
                             CancelButtonColor = Brushes.Red;
                             return;
                         }
-                        User = new User();
-                        User.login = Login;
-                        User.name = Name;
-                        User.surname = Surname;
-                        User.password = this.Password_1;
+                        
+                        User user = new User();
+                        user.Login = Login;
+                        user.Name = Name;
+                        user.Surname = Surname;
+                        user.Password = this.Password_1.ToString();
+                        user.Email = this.Email;
+                        MessageBox.Show($"{Login} {Name} {Surname} {Password_1}");
+                        this.userService.user = user;
                         Application.Current.Windows[1].Close();
                     }
                     );
@@ -60,5 +81,7 @@ namespace JOP.ViewModel
                     );
         }
 
+        
+        
     }
 }

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\JOP\JOP.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
 </Project>

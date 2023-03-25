@@ -20,9 +20,9 @@ namespace JOP.ViewModel
 
         public SHOP_list_ViewModel()
         {
-            using (DBContext dB = new())
+            using (ShopContext dB = new())
             {
-                //Categories = dB.Category;
+                Categories = dB.Categories.ToList();
             }
         }
         public RelayCommand SelectedCategoryCommand
@@ -31,9 +31,9 @@ namespace JOP.ViewModel
                 new(
                     async () =>
                     {
-                        using (DBContext dB = new())
+                        using (ShopContext db = new())
                         {
-                            //Products = dB.Product.Where(x => x.Category.Id = SelectedCategory.Id);
+                            Products = db.Products.Where(x=>x.CategoryId == SelectedCategory.Id).ToList();
                         }
                     }
                     );
@@ -43,9 +43,9 @@ namespace JOP.ViewModel
         {
             get =>
                 new(
-                    async () =>
+                     () =>
                     {
-                        using (DBContext dB = new())
+                        using (ShopContext dB = new())
                         {
 
                         }

@@ -1,0 +1,5 @@
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\SHOP_admin.csproj.AssemblyReference.cache
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\Model\UsersListWindow.g.cs
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\SHOP_admin_MarkupCompile.cache
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\SHOP_admin_MarkupCompile.lref

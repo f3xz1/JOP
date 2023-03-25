@@ -28,31 +28,31 @@ namespace SHOP_admin.ViewModel
                      async () =>
                      {
                          int CategoryId;
-                         using (DBContext db = new() )
+                         using (ShopContext db = new() )
                          {
-                             if(db.Category.Select(x=>x.Name == Category) != null)
+                             if(db.Categories.Any(x=>x.Name.ToLower() == Category.ToLower()))
                              {
                                  Category category = new(Category);
-                                 db.Category.Add(category);
+                                 db.Categories.Add(category);
                                  db.SaveChanges();
                              }
-                             CategoryId = db.Category.Where(x => x.Name == Category).First().Id;
+                             CategoryId = db.Categories.Where(x => x.Name == Category).First().Id;
                          }
-                         Product product = new(Name,double.Parse(Price), double.Parse(Quality),Description,CategoryId);
-                         using (DBContext db = new())
+                         Product product = new(Name,double.Parse(Price), int.Parse(Quality),Description,CategoryId);
+                         using (ShopContext db = new())
                          {
-                             if(db.Product.Where(x=>x.name == (Name.ToLower())).First()!=null)
+                             if(db.Products.Any(x=>x.Name == (Name.ToLower())))
                              {
-                                 db.Product.Where(x => x.name == (Name.ToLower())).First().quality += double.Parse(Quality);
-                             db.SaveChanges();
+                                 db.Products.Where(x => x.Name == (Name.ToLower())).First().Quality += int.Parse(Quality);
+                                 db.SaveChanges();
                              }
                              else
                              {
-                                 db.Product.Add(product);
+                                 db.Products.Add(product);
                                  db.SaveChanges();
                              }
                          }
-                         //Application.Current.Windows[--].Close();
+                         Application.Current.Windows[2].Close();
                      }
                     );
         }
@@ -63,7 +63,7 @@ namespace SHOP_admin.ViewModel
                 new(
                      () =>
                      {
-                         //Application.Current.Windows[-------].Close();
+                         Application.Current.Windows[2].Close();
                      }
                     );
         }

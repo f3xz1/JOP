@@ -1,4 +1,4 @@
-﻿namespace SHOP_admin.ViewModel
+﻿namespace JOP
 {
     enum ProductWindowMod
     {

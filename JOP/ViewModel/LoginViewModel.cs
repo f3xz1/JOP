@@ -1,11 +1,14 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using JOP.Services;
 using JOP.View;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -15,21 +18,20 @@ namespace JOP.ViewModel
     {
         public string Login { get; set; }
         public string Password { get; set; }
-        public User user { get; set; }
+        static public User user { get; set; }
+        public UserService userService { get; set; } = new();
         public Visibility Wrong_label_visable { get; set; } = Visibility.Hidden;
         public RelayCommand LoginCommand
         {
-
             get => new(
-
-                async () =>
+                () =>
                 {
-                    using (DBContext appContext = new DBContext())
+                    using (ShopContext appContext = new ShopContext())
                     {
-                        user.login = Login;
-                        user.password = Password;
+                        user.Login = Login;
+                        user.Password = Password;
 
-                        User getuser = appContext.Users.First(a => a.login == this.user.login && a.password == this.user.password);
+                        User getuser = appContext.Users.First(a => a.Login == user.Login && a.Password == user.Password);
                         if (getuser != null && !getuser.IsAdmin)
                             {
                                 SHOP_list shop_List = new();
@@ -49,24 +51,35 @@ namespace JOP.ViewModel
                 }
                 );
         }
-
         public RelayCommand RegCommand {
             get =>
                 new(
-                    () =>
+                    async () =>
                     {
-                        //RegWindow reg = new();
-                        //reg.ShowDialog();
-                        //user = reg.user;
-                        //if (user != null)
-                        //{
-                        //    var res = user.create_user_async();
-                        //    this.Login = user.login;
-                        //    this.Password = user.password;
-                        //}
-                        CartWindow cartWindow = new();
-                        //cartWindow.MyList.Items.Add("qwe","123");
-                        cartWindow.Show();
+                        RegWindow reg = new();
+                        reg.DataContext = new RegisterViewModel(userService);
+                        reg.ShowDialog();
+                        user = userService.user;
+                        if (user != null)
+                        {
+                            try
+                            {
+                                MessageBox.Show(user.Id.ToString() + user.Login + user.Surname);
+                                using (ShopContext db = new())
+                                {
+                                    db.Users.Add(user);
+                                    db.SaveChanges();
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("CreateUserThrow");
+                                throw;
+                            }
+                            //user.create_user();
+                            this.Login = user.Login;
+                            this.Password = user.Password;
+                        }
                     }
                     );
         }

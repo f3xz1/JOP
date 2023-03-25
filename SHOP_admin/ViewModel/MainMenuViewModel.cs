@@ -50,6 +50,7 @@ namespace SHOP_admin.ViewModel
                      () =>
                      {
                          UsersListWindow usersListWindow = new();
+                         usersListWindow.DataContext = new AddAdminViewModel();
                          usersListWindow.ShowDialog();
                      }
                     );

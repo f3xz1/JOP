@@ -12,7 +12,7 @@ namespace JOP.ViewModel
     internal class CartWindowViewModel
     {
         User User { get; set; }
-
+        
         public List<Product> CartProducts { get; set; }
 
         public RelayCommand FinishShopingCommand
@@ -32,7 +32,7 @@ namespace JOP.ViewModel
                             "**************************************");
                         for (int i = 0; i < CartProducts.Count; i++)
                         {
-                            Check.Append($" {CartProducts[i].quality} of {CartProducts[i].name}: {CartProducts[i].quality * CartProducts[i].quality}\n");
+                            Check.Append($" {CartProducts[i].Quality} of {CartProducts[i].Name}: {CartProducts[i].Quality * CartProducts[i].Quality}\n");
                         }
                         Check.Append($"\n Data: {System.DateTime.Now.ToLongDateString()}");
                         

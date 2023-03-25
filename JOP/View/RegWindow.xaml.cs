@@ -24,7 +24,6 @@ namespace JOP
         public RegWindow()
         {
             InitializeComponent();
-            DataContext = new RegisterViewModel();
         }
     }
 }

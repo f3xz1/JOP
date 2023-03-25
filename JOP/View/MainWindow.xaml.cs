@@ -28,46 +28,46 @@ namespace JOP
             InitializeComponent();
             DataContext = new LoginViewModel();
         }
-        private void Reg_Button_Click(object sender, RoutedEventArgs e)
-        {
-            RegWindow reg = new();
-            reg.ShowDialog();
-            user = reg.user;
-            if (user != null)
-            {
-                var res = user.create_user_async();
-                this.Login_textbox.Text = user.login;
-                this.Password_textbox.Password = user.password;
-            }
-        }
+        //private void Reg_Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    RegWindow reg = new();
+        //    reg.ShowDialog();
+        //    user = reg.user;
+        //    if (user != null)
+        //    {
+        //        var res = user.create_user_async();
+        //        this.Login_textbox.Text = user.Login;
+        //        this.Password_textbox.Password = user.Password;
+        //    }
+        //}
 
-        private void Log_Button_Click(object sender, RoutedEventArgs e)
-        {
-            using (DBContext appContext = new DBContext())
-            {
-                User getuser = appContext.Users.First(a => a.login == this.user.login && a.password == this.user.password);
-                if (getuser != null && !getuser.IsAdmin)
-                {
-                    //main prog open
-                    //Shop_List shop_List = new();
-                    //this.Close();
-                    //shop_List.Show();3
-                }
-                else if (getuser.IsAdmin)
-                {
-                    this.Close();
-                    Process.Start("SHOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe");
-                }
-                else
-                {
-                    this.wrong_info.Visibility = Visibility.Visible;
-                }
-            }
-        }
+        //private void Log_Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    using (ShopContext appContext = new ShopContext())
+        //    {
+        //        User getuser = appContext.Users.First(a => a.Login == this.user.Login && a.Password == this.user.Password);
+        //        if (getuser != null && !getuser.IsAdmin)
+        //        {
+        //            //main prog open
+        //            //Shop_List shop_List = new();
+        //            //this.Close();
+        //            //shop_List.Show();3
+        //        }
+        //        else if (getuser.IsAdmin)
+        //        {
+        //            this.Close();
+        //            Process.Start("SHOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe");
+        //        }
+        //        else
+        //        {
+        //            this.wrong_info.Visibility = Visibility.Visible;
+        //        }
+        //    }
+        //}
 
-        private void Password_textbox_GotFocus(object sender, RoutedEventArgs e) // delete or finish
-        {
-            this.Background = Brushes.AliceBlue;
-        }
+        //private void Password_textbox_GotFocus(object sender, RoutedEventArgs e) // delete or finish
+        //{
+        //    this.Background = Brushes.AliceBlue;
+        //}
     }
 }
