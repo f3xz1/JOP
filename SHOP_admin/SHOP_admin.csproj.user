@@ -7,11 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\GetUrlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\UsersListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="View\GetUrlView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\UsersListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

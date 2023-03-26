@@ -23,4 +23,6 @@ public partial class Product
     public virtual Category Category { get; set; } = null!;
 
     public virtual ICollection<TakenProduct> TakenProducts { get; } = new List<TakenProduct>();
+
+
 }

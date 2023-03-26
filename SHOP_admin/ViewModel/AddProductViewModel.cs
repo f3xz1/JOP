@@ -2,12 +2,15 @@
 using JOP;
 using JOP.View;
 using Microsoft.EntityFrameworkCore;
+using SHOP_admin.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace SHOP_admin.ViewModel
 {
@@ -18,6 +21,8 @@ namespace SHOP_admin.ViewModel
         public string Price { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
+        public string ImageUrl { get; set; }
+        public BitmapImage Image { get; set; }
 
 
 
@@ -38,7 +43,7 @@ namespace SHOP_admin.ViewModel
                              }
                              CategoryId = db.Categories.Where(x => x.Name == Category).First().Id;
                          }
-                         Product product = new(Name,double.Parse(Price), int.Parse(Quality),Description,CategoryId);
+                         //Product product = new(Name,double.Parse(Price), int.Parse(Quality),Description,CategoryId);
                          using (ShopContext db = new())
                          {
                              if(db.Products.Any(x=>x.Name == (Name.ToLower())))
@@ -48,7 +53,7 @@ namespace SHOP_admin.ViewModel
                              }
                              else
                              {
-                                 db.Products.Add(product);
+                                 //db.Products.Add(product);
                                  db.SaveChanges();
                              }
                          }
@@ -57,6 +62,17 @@ namespace SHOP_admin.ViewModel
                     );
         }
 
+        public RelayCommand GetImageUrlCommand
+        {
+            get =>
+                new(
+                     () =>
+                     {
+                        
+                     }
+                    );
+        }
+        
         public RelayCommand CancelCommand
         {
             get =>

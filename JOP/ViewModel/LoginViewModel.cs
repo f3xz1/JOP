@@ -26,12 +26,14 @@ namespace JOP.ViewModel
             get => new(
                 () =>
                 {
+                    User getuser;
                     using (ShopContext appContext = new ShopContext())
                     {
                         user.Login = Login;
                         user.Password = Password;
 
-                        User getuser = appContext.Users.First(a => a.Login == user.Login && a.Password == user.Password);
+                        getuser = appContext.Users.First(a => a.Login == user.Login && a.Password == user.Password);
+                    }
                         if (getuser != null && !getuser.IsAdmin)
                             {
                                 SHOP_list shop_List = new();
@@ -47,7 +49,6 @@ namespace JOP.ViewModel
                             {
                                 Wrong_label_visable = Visibility.Visible;
                             }
-                    }
                 }
                 );
         }

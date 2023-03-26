@@ -16,11 +16,13 @@ namespace JOP.ViewModel
 {
     public class RegisterViewModel
     {
-        
-        public UserService userService{ get; set; }
+
+        public UserService userService { get; set; }
         public string Login { get; set; }
         public string Password_1 { get; set; }
-        public string Password_2{get;set;
+        public string Password_2
+        {
+            get; set;
         }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -36,7 +38,6 @@ namespace JOP.ViewModel
         }
         public RelayCommand RegUserCommand
         {
-
             get =>
                 new(
 
@@ -57,7 +58,7 @@ namespace JOP.ViewModel
                             CancelButtonColor = Brushes.Red;
                             return;
                         }
-                        
+
                         User user = new User();
                         user.Login = Login;
                         user.Name = Name;
@@ -80,8 +81,5 @@ namespace JOP.ViewModel
                     }
                     );
         }
-
-        
-        
     }
 }

@@ -30,6 +30,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Button Grid.Column="1" Grid.Row="1" Content="Finish Shoping" Command="{Binding FinishShopingCommand}"/>
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*"/>
                 <RowDefinition/>

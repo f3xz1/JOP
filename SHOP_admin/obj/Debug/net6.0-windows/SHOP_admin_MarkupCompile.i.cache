@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\f3xz1\source\repos\JOP\SHOP_admin\App.xaml
-2-1412910848
+3-780952340
 
-10811080985
+12-744617948
 224-1639930881
-View\MainWindow.xaml;View\UsersListWindow.xaml;
+View\GetUrlView.xaml;View\MainWindow.xaml;View\UsersListWindow.xaml;
 
 True
 

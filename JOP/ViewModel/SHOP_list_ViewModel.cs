@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using JOP.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,9 @@ namespace JOP.ViewModel
         public List<Product> Products { get; set; }
 
         public Category SelectedCategory { get; set; }
-            
+
+        public Product SelectedProduct { get; set; }
+
         public User User { get; set; }
 
         public SHOP_list_ViewModel()
@@ -33,7 +36,22 @@ namespace JOP.ViewModel
                     {
                         using (ShopContext db = new())
                         {
-                            Products = db.Products.Where(x=>x.CategoryId == SelectedCategory.Id).ToList();
+                            Products = db.Products.Where(x=>x.CategoryId == SelectedCategory.Id && x.Quality>0).ToList();
+                        }
+                    }
+                    );
+        }
+
+        public RelayCommand FinishShopingCommand
+        {
+            get =>
+                new(
+                     () =>
+                    {
+                        using (ShopContext db = new())
+                        {
+                            CartWindow window = new CartWindow();
+                            window.ShowDialog();
                         }
                     }
                     );
@@ -45,10 +63,11 @@ namespace JOP.ViewModel
                 new(
                      () =>
                     {
-                        using (ShopContext dB = new())
-                        {
-
-                        }
+                        Product_window productwindow = new Product_window();
+                        var vm = new ProductWindowViewModel();
+                        vm.SelectedProduct = SelectedProduct;
+                        productwindow.DataContext = vm;
+                        productwindow.ShowDialog();
                     }
                     );
         }

@@ -36,7 +36,7 @@ namespace SHOP_admin.ViewModel
                      {
                          SHOP_list SHOP_Window = new();
 
-                         SHOP_Window.DataContext = new AddProductViewModel(); //Change vm
+                         SHOP_Window.DataContext = new EditProductViewModel(); //Change vm
 
                          SHOP_Window.ShowDialog();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
 using System.Windows;
@@ -8,6 +9,7 @@ namespace JOP;
 
 public partial class User
 {
+    [Key]
     public int Id { get; set; }
 
     public string? Name { get; set; }
@@ -35,39 +37,5 @@ public partial class User
     public User()
     {
 
-    }
-    public async Task create_user_async()
-    {
-        try
-        {
-            using (ShopContext db = new())
-            {
-                db.Users.Add(this);// await
-                db.SaveChanges();
-            }
-        }
-        catch (Exception)
-        {
-            MessageBox.Show("CreateUserThrow");
-            throw;
-        }
-    }
-    public bool create_user()
-    {
-        try
-        {
-            MessageBox.Show(this.Id.ToString()+this.Login+this.Surname);
-            using (ShopContext db = new())
-            {
-                db.Users.Add(this);
-                db.SaveChanges();
-            }
-        }
-        catch (Exception)
-        {
-            MessageBox.Show("CreateUserThrow");
-            throw;
-        }
-        return true;
     }
 }
