@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace JOP.ViewModel
 {
-    class SHOP_list_ViewModel
+    public class SHOP_list_ViewModel
     {
-
         public bool EditProductsMod { get; set; } = false;
         public List<Category> Categories { get; set; }
         public List<Product> Products { get; set; }
@@ -41,7 +40,20 @@ namespace JOP.ViewModel
                     }
                     );
         }
-
+        //public RelayCommand SelectedProductCommand
+        //{
+        //    get =>
+        //        new(
+        //             () =>
+        //             {
+        //                 Product_window productwindow = new Product_window();
+        //                 var vm = new ProductWindowViewModel();
+        //                 vm.SelectedProduct = SelectedProduct;
+        //                 productwindow.DataContext = vm;
+        //                 productwindow.ShowDialog();
+        //             }
+        //            );
+        //}
         public RelayCommand FinishShopingCommand
         {
             get =>
@@ -53,21 +65,6 @@ namespace JOP.ViewModel
                             CartWindow window = new CartWindow();
                             window.ShowDialog();
                         }
-                    }
-                    );
-        }
-
-        public RelayCommand SelectedProductCommand
-        {
-            get =>
-                new(
-                     () =>
-                    {
-                        Product_window productwindow = new Product_window();
-                        var vm = new ProductWindowViewModel();
-                        vm.SelectedProduct = SelectedProduct;
-                        productwindow.DataContext = vm;
-                        productwindow.ShowDialog();
                     }
                     );
         }

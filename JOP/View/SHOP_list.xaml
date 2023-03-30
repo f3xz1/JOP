@@ -19,13 +19,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2"/>
-            <!--ItemsSource="{Binding Source=}"-->
-            <ListView Grid.Row="0" Grid.Column="1" Background="AliceBlue" SelectedItem="{Binding SelectedProductCommand}">
+            <ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+                
+            </ListBox>
+            <ListView Grid.Row="0" Grid.Column="1" Background="AliceBlue"  ItemsSource="{Binding Products}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding Price}"/> 
+                        <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding Price}"/>
                         <GridViewColumn Header="Quality" Width="100" DisplayMemberBinding="{Binding Quality}"/>
                     </GridView>
                 </ListView.View>

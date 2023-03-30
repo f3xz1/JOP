@@ -18,8 +18,19 @@ namespace JOP.ViewModel
     
     public class ProductWindowViewModel
     {
-        public Product SelectedProduct { get; set; } 
-        public int mod { get; set; } = (int)ProductWindowMod.Sell;
+        public Product SelectedProduct { get; set; } = new();
+
+
+        //public int mod
+        //{
+        //    get { return mod; }
+        //    set { mod = value; }
+        //} = (int)ProductWindowMod.Sell;
+
+        //public int mod {
+        //    get =>{
+
+        //    }; set; } = (int)ProductWindowMod.Sell;
         User User { get; set; } = LoginViewModel.user;
         public string Name { get; set; }
         public string Quality { get; set; }

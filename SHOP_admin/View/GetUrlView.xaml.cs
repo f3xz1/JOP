@@ -23,7 +23,7 @@ namespace SHOP_admin.View
         public GetUrlView()
         {
             InitializeComponent();
-            DataContext = new GetPictureUrlViewModel();
+            DataContext = new GetUrlViewModel();
         }
     }
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using GalaSoft.MvvmLight.Command;
 
 using JOP;
 using JOP.View;
+using JOP.ViewModel;
 using SHOP_admin.Model;
 
 namespace SHOP_admin.ViewModel
@@ -21,10 +23,9 @@ namespace SHOP_admin.ViewModel
                 new(
                      () =>
                     {
-                        Product_window product_Window = new();
+                        Product_window product_Window = new Product_window();
                         product_Window.DataContext = new AddProductViewModel();
-                        product_Window.ShowDialog();
-
+                        product_Window.Show();
                     }
                     );
         }
@@ -34,12 +35,12 @@ namespace SHOP_admin.ViewModel
                 new(
                      () =>
                      {
-                         SHOP_list SHOP_Window = new();
-
-                         SHOP_Window.DataContext = new EditProductViewModel(); //Change vm
-
-                         SHOP_Window.ShowDialog();
-
+                         
+                         SHOP_list Shop_Window = new();
+                         var vm = new SHOP_list_ViewModel();
+                         vm.EditProductsMod = true;
+                         Shop_Window.DataContext =
+                         Shop_Window.ShowDialog();
                      }
                     );
         }

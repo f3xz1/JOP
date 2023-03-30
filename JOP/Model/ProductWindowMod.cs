@@ -1,6 +1,6 @@
 ﻿namespace JOP
 {
-    enum ProductWindowMod
+    public enum ProductWindowMod
     {
         Edit,
         Add,

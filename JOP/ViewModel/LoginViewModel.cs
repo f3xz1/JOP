@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using JOP.Model;
 using JOP.Services;
 using JOP.View;
 using System;
@@ -19,36 +20,38 @@ namespace JOP.ViewModel
         public string Login { get; set; }
         public string Password { get; set; }
         static public User user { get; set; }
-        public UserService userService { get; set; } = new();
+        public Message userMessage { get; set; } = new();
         public Visibility Wrong_label_visable { get; set; } = Visibility.Hidden;
         public RelayCommand LoginCommand
         {
             get => new(
                 () =>
                 {
-                    User getuser;
+                    user = new();
                     using (ShopContext appContext = new ShopContext())
                     {
                         user.Login = Login;
                         user.Password = Password;
 
-                        getuser = appContext.Users.First(a => a.Login == user.Login && a.Password == user.Password);
+                        user = appContext.Users.First(a => a.Login == user.Login && a.Password == user.Password);
                     }
-                        if (getuser != null && !getuser.IsAdmin)
-                            {
-                                SHOP_list shop_List = new();
-                                Application.Current.Windows[0].Close();
-                                shop_List.Show();
-                            }
-                            else if (getuser.IsAdmin)
-                            {
-                                Application.Current.Windows[0].Close();
-                                //Process.Start("SHOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe");   Start admin application
-                            }
-                            else
-                            {
-                                Wrong_label_visable = Visibility.Visible;
-                            }
+                    MessageBox.Show(user.Login+user.Password);
+                    if (user != null && !user.IsAdmin)
+                    {
+                        SHOP_list shop_List = new();
+                        shop_List.DataContext = new SHOP_list_ViewModel();
+                        shop_List.Show();
+                        //Application.Current.Windows[0].Close();
+                    }
+                    else if (user.IsAdmin)
+                    {
+                        Application.Current.Windows[0].Close();
+                        Process.Start("C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe"); // problem!!!
+                    }
+                    else
+                    {
+                        Wrong_label_visable = Visibility.Visible;
+                    }
                 }
                 );
         }
@@ -58,9 +61,9 @@ namespace JOP.ViewModel
                     async () =>
                     {
                         RegWindow reg = new();
-                        reg.DataContext = new RegisterViewModel(userService);
+                        reg.DataContext = new RegisterViewModel(userMessage);
                         reg.ShowDialog();
-                        user = userService.user;
+                        user = userMessage.user;
                         if (user != null)
                         {
                             try

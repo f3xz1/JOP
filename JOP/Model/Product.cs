@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JOP;
 
 public partial class Product
 {
+    [Key]
     public int Id { get; set; }
 
     public int CategoryId { get; set; }

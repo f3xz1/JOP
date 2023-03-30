@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SHOP_admin.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace SHOP_admin
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainMenuViewModel();
         }
     }
 }

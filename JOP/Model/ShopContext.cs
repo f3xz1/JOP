@@ -9,12 +9,10 @@ public partial class ShopContext : DbContext
     public ShopContext()
     {
     }
-
     public ShopContext(DbContextOptions<ShopContext> options)
         : base(options)
     {
     }
-
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
@@ -31,16 +29,12 @@ public partial class ShopContext : DbContext
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07F73350A3");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Product__3214EC078E6E8357");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(50);
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
@@ -52,8 +46,6 @@ public partial class ShopContext : DbContext
         modelBuilder.Entity<TakenProduct>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__TakenPro__3214EC07178A34AD");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Customer).WithMany(p => p.TakenProducts)
                 .HasForeignKey(d => d.CustomerId)
@@ -69,8 +61,6 @@ public partial class ShopContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07AD43DB08");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Login).HasMaxLength(50);
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.Password).HasMaxLength(50);

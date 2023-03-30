@@ -11,7 +11,7 @@ namespace SHOP_admin.ViewModel
 {
     class AddAdminViewModel
     {
-        public User user { get; set; }
+        public User Users { get; set; }
         public RelayCommand SelectedUserCommand
         {
             get =>
@@ -20,15 +20,15 @@ namespace SHOP_admin.ViewModel
                      {
                          using (ShopContext db = new())
                          {
-                             if (!user.IsAdmin)
+                             if (!Users.IsAdmin)
                              {
-                                 db.Users.Where(x => x.Login == user.Login).First().IsAdmin = true;
-                                 MessageBox.Show($"{user.Login} is admin");
+                                 db.Users.Where(x => x.Login == Users.Login).First().IsAdmin = true;
+                                 MessageBox.Show($"{Users.Login} is admin");
                              }
                              else
                              {
-                                 db.Users.Where(x => x.Login == user.Login).First().IsAdmin = false;
-                                 MessageBox.Show($"{user.Login} is not admin");
+                                 db.Users.Where(x => x.Login == Users.Login).First().IsAdmin = false;
+                                 MessageBox.Show($"{Users.Login} is not admin");
                              }
                              db.SaveChanges();
                          }

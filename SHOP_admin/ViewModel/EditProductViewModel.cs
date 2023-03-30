@@ -56,14 +56,14 @@ namespace SHOP_admin.ViewModel
         {
             get =>
                 new(
-                     () =>
+                     async () =>
                      {
                          GetUrlView getUrlView = new();
-                         GetPictureUrlViewModel  getPictureUrlViewModel = new();
+                         GetUrlViewModel  getPictureUrlViewModel = new();
                          getUrlView.DataContext = getPictureUrlViewModel;
                          getUrlView.ShowDialog();
                          this.ImageUrl = getPictureUrlViewModel.Url;
-                         LoadImage(ImageUrl);
+                         await LoadImage(ImageUrl);
                          Application.Current.Windows[2].Close();
                      }
                     );

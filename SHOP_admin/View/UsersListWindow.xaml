@@ -11,24 +11,24 @@
             <RowDefinition Height="9*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView Background="AliceBlue" SelectedItem="{Binding user}" SelectionMode="Single" Selected="{Binding SelectedUserCommand}">
+        <ListView Background="AliceBlue" SelectedItem="{Binding Users}" SelectionMode="Single"><!--Selected="{Binding SelectedUserCommand}"-->
             <ListView.View>
                 <GridView>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <CheckBox/>
-                                    <Label/>
+                                    <CheckBox IsChecked="{Binding IsAdmin}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Is admin"/>
-                    <GridViewColumn Header="Name"/>
-                    <GridViewColumn Header="Surname"/>
-                    <GridViewColumn Header="Email"/>
-                    <GridViewColumn Header="Email"/>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Login" Width="50" DisplayMemberBinding="{Binding Login}"/>
+                    <GridViewColumn Header="Name" Width="50" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Surname" Width="100" DisplayMemberBinding="{Binding Surname}"/>
+                    <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Is admin" Width="50"/>
                 </GridView>
             </ListView.View>
         </ListView>

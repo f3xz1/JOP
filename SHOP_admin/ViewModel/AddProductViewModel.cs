@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,37 +25,51 @@ namespace SHOP_admin.ViewModel
         public string ImageUrl { get; set; }
         public BitmapImage Image { get; set; }
 
+        public bool NameTextboxEnabled { get; set; } = true;
+        public bool QualityTextboxEnabled { get; set; } = true;
+        public bool PriceTextboxEnabled { get; set; } = true;
+        public bool CategoryTextboxEnabled { get; set; } = true;
+        public bool DescriptionTextboxEnabled { get; set; } = true;
 
-
-        public RelayCommand AddProductCommand
+        public RelayCommand DoneCommand
         {
             get =>
                 new(
                      async () =>
                      {
+                         Product product = new();
+                         Category category;
                          int CategoryId;
                          using (ShopContext db = new() )
                          {
-                             if(db.Categories.Any(x=>x.Name.ToLower() == Category.ToLower()))
+                             if(db.Categories.FirstOrDefault(x=>x.Name.ToLower().Contains(Category.ToLower())) == null) // false
                              {
-                                 Category category = new(Category);
+                                 category = new(Category);
                                  db.Categories.Add(category);
-                                 db.SaveChanges();
+                                 await db.SaveChangesAsync();
                              }
-                             CategoryId = db.Categories.Where(x => x.Name == Category).First().Id;
+                             category = db.Categories.Where(x => x.Name == Category).First(); // null excpn
                          }
-                         //Product product = new(Name,double.Parse(Price), int.Parse(Quality),Description,CategoryId);
+
+                         product.Name = Name;
+                         product.Quality = int.Parse(Quality);
+                         product.Price = double.Parse(Quality);
+                         product.Category = category;
+                         product.Description = Description;
+                         product.Image = ImageUrl;
+
                          using (ShopContext db = new())
                          {
                              if(db.Products.Any(x=>x.Name == (Name.ToLower())))
                              {
                                  db.Products.Where(x => x.Name == (Name.ToLower())).First().Quality += int.Parse(Quality);
-                                 db.SaveChanges();
+                                 await db.SaveChangesAsync();
                              }
                              else
                              {
-                                 //db.Products.Add(product);
-                                 db.SaveChanges();
+                                 db.Products.Add(product);
+                                 MessageBox.Show($"{product.Id} {product.Name} {product.Category.Name}");
+                                 await db.SaveChangesAsync();
                              }
                          }
                          Application.Current.Windows[2].Close();
@@ -65,21 +80,45 @@ namespace SHOP_admin.ViewModel
         public RelayCommand GetImageUrlCommand
         {
             get =>
-                new(
-                     () =>
+                 new(
+                    async () =>
                      {
-                        
+                         try
+                         {
+                             GetUrlView getUrlView = new();
+                             GetUrlViewModel getUrl = new();
+                             getUrlView.DataContext = getUrl;
+                             getUrlView.ShowDialog();
+                             this.ImageUrl = getUrl.Url;
+                             await LoadImage(ImageUrl);
+                         }
+                         catch (Exception)
+                         {
+                             MessageBox.Show("Can not load Image");
+                         }
                      }
                     );
         }
-        
-        public RelayCommand CancelCommand
+        public async Task LoadImage(string url) // scnd in proj
+        {
+            using (var client = new HttpClient())
+            {
+                var stream = await client.GetStreamAsync(url);
+                var image1 = new BitmapImage();
+                image1.BeginInit();
+                image1.CacheOption = BitmapCacheOption.OnLoad;
+                image1.StreamSource = stream;
+                image1.EndInit();
+                Image = image1;
+            }
+        }
+        public RelayCommand CloseCommand
         {
             get =>
                 new(
                      () =>
                      {
-                         Application.Current.Windows[2].Close();
+                         Application.Current.Windows[2].Close(); // rechack
                      }
                     );
         }

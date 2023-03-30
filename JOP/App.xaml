@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:JOP"
              StartupUri="/View/MainWindow.xaml"
+             
              >
-             <!--xmlns:viewModel="clr-namespace:JOP.ViewModel"
+             <!--xmlns:ViewModel="clr-namespace:JOP.ViewModel"
              xmlns:view="clr-namespace:JOP.View"-->
     <Application.Resources>
         <ResourceDictionary>
-
-            <!--<DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
-                <view:MainWindiow></view:MainWindiow>
-            </DataTemplate>-->
             
+            <!--<DataTemplate DataType="{x:Type ViewModel:LoginViewModel}">
+                <View:MainWindow></View:MainWindow>
+            </DataTemplate>-->
             
         </ResourceDictionary>
     </Application.Resources>
