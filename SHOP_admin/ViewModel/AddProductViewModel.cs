@@ -38,13 +38,11 @@ namespace SHOP_admin.ViewModel
                      async () =>
                      {
                          Product product = new();
-                         Category category;
-                         int CategoryId;
+                         Category category = new(Category);
                          using (ShopContext db = new() )
                          {
-                             if(db.Categories.FirstOrDefault(x=>x.Name.ToLower().Contains(Category.ToLower())) == null) // false
+                             if(!db.Categories.Any(x=>x.Name.ToLower().Contains(Category.ToLower())))
                              {
-                                 category = new(Category);
                                  db.Categories.Add(category);
                                  await db.SaveChangesAsync();
                              }
@@ -57,21 +55,29 @@ namespace SHOP_admin.ViewModel
                          product.Category = category;
                          product.Description = Description;
                          product.Image = ImageUrl;
-
-                         using (ShopContext db = new())
+                         try
                          {
-                             if(db.Products.Any(x=>x.Name == (Name.ToLower())))
+                             using (ShopContext db = new())
                              {
-                                 db.Products.Where(x => x.Name == (Name.ToLower())).First().Quality += int.Parse(Quality);
-                                 await db.SaveChangesAsync();
-                             }
-                             else
-                             {
-                                 db.Products.Add(product);
-                                 MessageBox.Show($"{product.Id} {product.Name} {product.Category.Name}");
-                                 await db.SaveChangesAsync();
+                                 if (db.Products.Any(x => x.Name == (Name.ToLower())))
+                                 {
+                                     db.Products.Where(x => x.Name == (Name.ToLower())).First().Quality += int.Parse(Quality);
+                                     await db.SaveChangesAsync();
+                                 }
+                                 else
+                                 {
+                                     db.Products.Add(product);
+                                     MessageBox.Show($"{product.Id} {product.Name} {product.Category.Name}");
+                                     await db.SaveChangesAsync(); // identity_insert off exception
+                                 }
                              }
                          }
+                         catch (Exception)
+                         {
+
+                             throw;
+                         }
+                         
                          Application.Current.Windows[2].Close();
                      }
                     );

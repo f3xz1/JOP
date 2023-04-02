@@ -31,7 +31,6 @@ public partial class ShopContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07F73350A3");
             entity.Property(e => e.Name).HasMaxLength(50);
         });
-
         modelBuilder.Entity<Product>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Product__3214EC078E6E8357");

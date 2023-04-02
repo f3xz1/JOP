@@ -3309,7 +3309,7 @@
       "projectName": "SHOP_admin",
       "projectPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\SHOP_admin.csproj",
       "packagesPath": "C:\\Users\\f3xz1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\obj\\",
+      "outputPath": "C:\\Users\\f3xz1\\Source\\Repos\\JOP\\SHOP_admin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

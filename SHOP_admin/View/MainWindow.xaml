@@ -10,6 +10,8 @@
         <StackPanel Orientation="Vertical">
             <Button Height="60" Margin="10" Content="Edit Products" Command="{Binding EditProductCommand}"/>
             <Button Height="60" Margin="10" Content="Add Product" Command="{Binding AddProductCommand}"/>
+            <!--<Button Height="60" Margin="10" Content="Delete Product" Command="{Binding DeleteProductCommand}"/>-->
+            <Button Height="60" Margin="10" Content="Categories" Command="{Binding CategoriesCommand}"/>
             <Button Height="60" Margin="10" Content="Add Admin" Command="{Binding AddAdminCommand}"/>
         </StackPanel>
     </Grid>
