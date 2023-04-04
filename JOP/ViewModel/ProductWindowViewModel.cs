@@ -108,7 +108,7 @@ namespace JOP.ViewModel
                 new(
                     () =>
                     {
-                        //Application.Current.Windows[---].Close();
+                        Application.Current.Windows[2].Close();
                     }
                     );
         }

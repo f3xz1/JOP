@@ -40,8 +40,8 @@ namespace JOP.ViewModel
                     {
                         SHOP_list shop_List = new();
                         shop_List.DataContext = new SHOP_list_ViewModel();
+                        Application.Current.Windows[0].Close();
                         shop_List.Show();
-                        //Application.Current.Windows[0].Close();
                     }
                     else if (user.IsAdmin)
                     {

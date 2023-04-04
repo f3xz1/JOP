@@ -53,7 +53,7 @@ namespace SHOP_admin.Model {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SHOP_admin;V1.0.0.0;component/view/userslistwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SHOP_admin;component/view/userslistwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\UsersListWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

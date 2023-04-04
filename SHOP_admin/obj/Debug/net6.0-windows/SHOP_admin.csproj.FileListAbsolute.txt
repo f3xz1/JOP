@@ -66,3 +66,5 @@ C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\refint\SHOP_
 C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\SHOP_admin.pdb
 C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\SHOP_admin.genruntimeconfig.cache
 C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\ref\SHOP_admin.dll
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\View\CategoriesView.g.cs
+C:\Users\f3xz1\source\repos\JOP\SHOP_admin\obj\Debug\net6.0-windows\View\CategoriesView.baml

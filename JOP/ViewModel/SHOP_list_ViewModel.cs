@@ -40,20 +40,20 @@ namespace JOP.ViewModel
                     }
                     );
         }
-        //public RelayCommand SelectedProductCommand
-        //{
-        //    get =>
-        //        new(
-        //             () =>
-        //             {
-        //                 Product_window productwindow = new Product_window();
-        //                 var vm = new ProductWindowViewModel();
-        //                 vm.SelectedProduct = SelectedProduct;
-        //                 productwindow.DataContext = vm;
-        //                 productwindow.ShowDialog();
-        //             }
-        //            );
-        //}
+        public RelayCommand SelectedProductCommand
+        {
+            get =>
+                new(
+                     () =>
+                     {
+                         Product_window productwindow = new Product_window();
+                         var vm = new ProductWindowViewModel();
+                         vm.SelectedProduct = SelectedProduct;
+                         productwindow.DataContext = vm;
+                         productwindow.ShowDialog();
+                     }
+                    );
+        }
         public RelayCommand FinishShopingCommand
         {
             get =>

@@ -39,20 +39,19 @@ namespace SHOP_admin.ViewModel
                      {
                          Product product = new();
                          Category category = new(Category);
-                         using (ShopContext db = new() )
+                         using (ShopContext db = new())
                          {
-                             if(!db.Categories.Any(x=>x.Name.ToLower().Contains(Category.ToLower())))
+                             if (!db.Categories.Any(x => x.Name.ToLower().Contains(Category.ToLower())))
                              {
-                                 db.Categories.Add(category);
-                                 await db.SaveChangesAsync();
+                                 product.Category = category;
                              }
-                             category = db.Categories.Where(x => x.Name == Category).First(); // null excpn
+                             else
+                                 product.CategoryId = db.Categories.Where(x => x.Name == Category).First().Id; // null excpn
                          }
 
                          product.Name = Name;
                          product.Quality = int.Parse(Quality);
                          product.Price = double.Parse(Quality);
-                         product.Category = category;
                          product.Description = Description;
                          product.Image = ImageUrl;
                          try

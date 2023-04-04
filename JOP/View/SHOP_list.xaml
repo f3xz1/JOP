@@ -19,9 +19,20 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
-                
-            </ListBox>
+            <!--<ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectionChanged="{Binding SelectedCategoryCommand}">-->
+            <!--</ListBox>-->
+
+            <ListBox ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Grid.RowSpan="2" Background="Aqua">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                            <!--<TextBlock Text="{Binding Name}" />-->
+                            <Button Content="{Binding Name}" Command="{Binding SelectedCategoryCommand}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+        
             <ListView Grid.Row="0" Grid.Column="1" Background="AliceBlue"  ItemsSource="{Binding Products}">
                 <ListView.View>
                     <GridView>

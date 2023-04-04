@@ -18,7 +18,6 @@ namespace SHOP_admin.ViewModel
 
         public RelayCommand AddProductCommand
         {
-
             get =>
                 new(
                      () =>
@@ -35,7 +34,6 @@ namespace SHOP_admin.ViewModel
                 new(
                      () =>
                      {
-                         
                          SHOP_list Shop_Window = new();
                          var vm = new SHOP_list_ViewModel();
                          vm.EditProductsMod = true;
