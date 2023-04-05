@@ -51,7 +51,7 @@ namespace SHOP_admin.ViewModel
 
                          product.Name = Name;
                          product.Quality = int.Parse(Quality);
-                         product.Price = double.Parse(Quality);
+                         product.Price = double.Parse(Price);
                          product.Description = Description;
                          product.Image = ImageUrl;
                          try
@@ -66,7 +66,6 @@ namespace SHOP_admin.ViewModel
                                  else
                                  {
                                      db.Products.Add(product);
-                                     MessageBox.Show($"{product.Id} {product.Name} {product.Category.Name}");
                                      await db.SaveChangesAsync(); // identity_insert off exception
                                  }
                              }

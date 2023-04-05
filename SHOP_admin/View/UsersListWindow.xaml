@@ -11,7 +11,7 @@
             <RowDefinition Height="9*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView Background="AliceBlue" SelectedItem="{Binding Users}" SelectionMode="Single"><!--Selected="{Binding SelectedUserCommand}"-->
+        <ListView Background="AliceBlue" ItemsSource="{Binding UsersList}" SelectionMode="Single"><!--Selected="{Binding SelectedUserCommand}"-->
             <ListView.View>
                 <GridView>
                     <GridViewColumn>

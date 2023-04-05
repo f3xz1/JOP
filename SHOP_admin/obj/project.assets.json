@@ -89,12 +89,12 @@
         },
         "compile": {
           "ref/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtimeTargets": {
@@ -533,12 +533,12 @@
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         }
       },
@@ -591,12 +591,12 @@
         "type": "package",
         "compile": {
           "lib/netstandard1.0/GalaSoft.MvvmLight.dll": {
-            "related": ".pdb;.XML"
+            "related": ".XML;.pdb"
           }
         },
         "runtime": {
           "lib/netstandard1.0/GalaSoft.MvvmLight.dll": {
-            "related": ".pdb;.XML"
+            "related": ".XML;.pdb"
           }
         }
       },
@@ -3299,23 +3299,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\f3xz1\\.nuget\\packages\\": {},
+    "C:\\Users\\gagn_ob80\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\SHOP_admin.csproj",
+      "projectUniqueName": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\SHOP_admin\\SHOP_admin.csproj",
       "projectName": "SHOP_admin",
-      "projectPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\SHOP_admin.csproj",
-      "packagesPath": "C:\\Users\\f3xz1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\f3xz1\\Source\\Repos\\JOP\\SHOP_admin\\obj\\",
+      "projectPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\SHOP_admin\\SHOP_admin.csproj",
+      "packagesPath": "C:\\Users\\gagn_ob80\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\SHOP_admin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\f3xz1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gagn_ob80\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3330,8 +3330,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj": {
-              "projectPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj"
+            "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj": {
+              "projectPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj"
             }
           }
         }
@@ -3370,7 +3370,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

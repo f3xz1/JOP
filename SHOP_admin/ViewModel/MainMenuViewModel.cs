@@ -10,6 +10,7 @@ using JOP;
 using JOP.View;
 using JOP.ViewModel;
 using SHOP_admin.Model;
+using SHOP_admin.View;
 
 namespace SHOP_admin.ViewModel
 {
@@ -51,6 +52,17 @@ namespace SHOP_admin.ViewModel
                          UsersListWindow usersListWindow = new();
                          usersListWindow.DataContext = new AddAdminViewModel();
                          usersListWindow.ShowDialog();
+                     }
+                    );
+        }
+        public RelayCommand CategoriesCommand
+        {
+            get =>
+                new(
+                     () =>
+                     {
+                         CategoriesView categoriesView = new CategoriesView();
+                         categoriesView.ShowDialog();
                      }
                     );
         }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj": {}
+    "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj": {
+    "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj",
+        "projectUniqueName": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj",
         "projectName": "JOP",
-        "projectPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj",
-        "packagesPath": "C:\\Users\\f3xz1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\obj\\",
+        "projectPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj",
+        "packagesPath": "C:\\Users\\gagn_ob80\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\f3xz1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gagn_ob80\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -82,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
