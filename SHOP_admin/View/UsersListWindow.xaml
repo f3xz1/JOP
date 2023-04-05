@@ -32,5 +32,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Button Content="Done" Grid.Row="1" Margin="500 10 10 10" Command="{Binding DoneCommand}"/>
     </Grid>
 </Window>

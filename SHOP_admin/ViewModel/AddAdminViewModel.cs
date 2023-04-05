@@ -3,6 +3,7 @@ using JOP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,9 +29,9 @@ namespace SHOP_admin.ViewModel
         {
             get =>
                 new(
-                      async () =>
+                       () =>
                       {
-
+                          Application.Current.Windows[2].Close();
                       }
                     );
         }

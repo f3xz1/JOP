@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JOP.View"
         mc:Ignorable="d"
         Title="Product window" Height="400" Width="500">
-    
+
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
             <Setter Property="Template">
@@ -59,7 +59,7 @@
             </Grid.RowDefinitions>
             <TextBlock x:Name="Product_quality_textblock" Text="quality: " Margin="10" FontSize="12.5"/>
             <TextBox Name="Product_quality_textbox" Grid.Row="0" Grid.Column="1" Margin="5 10" IsEnabled="{Binding QualityTextboxEnabled}" Text="{Binding Quality}" /> <!--TextChanged="{Binding QualityChanged}"-->
-            <TextBlock x:Name="Product_price_textblock" Text="price: " Grid.Row="1" Margin="10" FontSize="12.5"/>
+            <TextBlock x:Name="Product_price_textblock" Text="price: " Grid.Row="1" Margin="10" FontSize="13.5"/>
             <TextBox x:Name="Product_price_textbox" Grid.Row="1" Grid.Column="1" Margin="5 10" IsEnabled="{Binding PriceTextboxEnabled}" Text="{Binding Price}"/>
         </Grid>
         <TextBox x:Name="Product_description" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" IsEnabled="{Binding DescriptionTextboxEnabled}" FontSize="15" Margin="5" Text="{Binding Description}"/>
