@@ -12,7 +12,7 @@
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
-            <MenuItem Header="Kefteme"/>
+            <MenuItem Header="Kefteme" Command="{Binding SelectedCategoryCommand}"/>
         </Menu>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -22,17 +22,16 @@
             <!--<ListBox x:Name="Categiries_List" Background="Aqua" Grid.RowSpan="2" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectionChanged="{Binding SelectedCategoryCommand}">-->
             <!--</ListBox>-->
 
-            <ListBox ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Grid.RowSpan="2" Background="Aqua">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
+            <ListBox ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Grid.RowSpan="2" Background="Aqua" d:ItemsSource="{d:SampleData ItemCount=5}" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                             <!--<TextBlock Text="{Binding Name}" />-->
                             <Button Content="{Binding Name}" Command="{Binding SelectedCategoryCommand}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-        
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <ListView Grid.Row="0" Grid.Column="1" Background="AliceBlue"  ItemsSource="{Binding Products}">
                 <ListView.View>
                     <GridView>

@@ -15,7 +15,6 @@ namespace SHOP_admin.ViewModel
         public User Users { get; set; }
         public List<User> UsersList{get;set;}
 
-
         public AddAdminViewModel()
         {
             using (ShopContext db = new())
@@ -23,8 +22,6 @@ namespace SHOP_admin.ViewModel
                 UsersList = db.Users.ToList();
             }
         }
-
-        
         public RelayCommand DoneCommand
         {
             get =>

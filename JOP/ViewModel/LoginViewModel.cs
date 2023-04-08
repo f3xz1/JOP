@@ -46,7 +46,8 @@ namespace JOP.ViewModel
                     else if (user.IsAdmin)
                     {
                         Application.Current.Windows[0].Close();
-                        Process.Start("C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe"); // problem!!!
+                        //Process.Start("C:\\Users\\f3xz1\\source\\repos\\JOP\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe"); // problem!!!
+                        Process.Start("..\\SHOP_admin\\bin\\Debug\\net6.0-windows\\SHOP_admin.exe"); // problem!!!
                     }
                     else
                     {
@@ -68,7 +69,6 @@ namespace JOP.ViewModel
                         {
                             try
                             {
-                                MessageBox.Show(user.Id.ToString() + user.Login + user.Surname);
                                 using (ShopContext db = new())
                                 {
                                     db.Users.Add(user);

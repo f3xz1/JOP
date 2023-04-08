@@ -15,8 +15,8 @@ namespace SHOP_admin.ViewModel
             get =>
                 new(
                      () =>
-                     {  
-                         //Application.Current.Windows[---].Close(); 
+                     {
+                         Application.Current.Windows[3].Close();
                      }
                     );
         }

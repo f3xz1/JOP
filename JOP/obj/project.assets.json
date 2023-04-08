@@ -102,12 +102,12 @@
         },
         "compile": {
           "ref/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtimeTargets": {
@@ -600,12 +600,12 @@
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -670,12 +670,12 @@
         "type": "package",
         "compile": {
           "lib/netstandard1.0/GalaSoft.MvvmLight.dll": {
-            "related": ".XML;.pdb"
+            "related": ".pdb;.XML"
           }
         },
         "runtime": {
           "lib/netstandard1.0/GalaSoft.MvvmLight.dll": {
-            "related": ".XML;.pdb"
+            "related": ".pdb;.XML"
           }
         }
       },
@@ -3563,23 +3563,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gagn_ob80\\.nuget\\packages\\": {},
+    "C:\\Users\\f3xz1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj",
+      "projectUniqueName": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj",
       "projectName": "JOP",
-      "projectPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\JOP.csproj",
-      "packagesPath": "C:\\Users\\gagn_ob80\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gagn_ob80\\Source\\Repos\\JOP\\JOP\\obj\\",
+      "projectPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\JOP.csproj",
+      "packagesPath": "C:\\Users\\f3xz1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\f3xz1\\source\\repos\\JOP\\JOP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gagn_ob80\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\f3xz1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3644,7 +3644,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -2,17 +2,21 @@
 using JOP.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace JOP.ViewModel
 {
-    public class SHOP_list_ViewModel
+    public class SHOP_list_ViewModel:INotifyPropertyChanged
     {
         public bool EditProductsMod { get; set; } = false;
         public List<Category> Categories { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Product> Products { get; set;}
+        //public ObservableCollection<Product> Products { get; set;}
 
         public Category SelectedCategory { get; set; }
 
@@ -35,7 +39,8 @@ namespace JOP.ViewModel
                     {
                         using (ShopContext db = new())
                         {
-                            Products = db.Products.Where(x=>x.CategoryId == SelectedCategory.Id && x.Quality>0).ToList();
+                            MessageBox.Show(SelectedCategory.Id.ToString());
+                            Products =db.Products.Where(x=>x.CategoryId == SelectedCategory.Id && x.Quality>0).ToList();
                         }
                     }
                     );
@@ -68,5 +73,7 @@ namespace JOP.ViewModel
                     }
                     );
         }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

@@ -64,7 +64,6 @@ namespace JOP.ViewModel
                         user.Surname = Surname;
                         user.Password = this.Password_1.ToString();
                         user.Email = this.Email;
-                        MessageBox.Show($"{Login} {Name} {Surname} {Password_1}");
                         this.userMessage.user = user;
                         Application.Current.Windows[1].Close();
                     }
